@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدليل الشامل لقوانين الكرة الطائرة</title>
+    <title>الدليل الشامل لقوانين الكرة الطائرة 2025</title>
     <!-- استدعاء خط تجوال العربي -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <!-- استدعاء أيقونات FontAwesome -->
@@ -88,7 +88,7 @@
             color: var(--secondary);
         }
 
-        /* شبكة الكروت (للحكام واللاعبين) */
+        /* شبكة الكروت */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,10 +121,23 @@
 
         /* تمييز كارت الليبرو */
         .card.libero {
-            border-right-color: var(--accent);
-            background: #fff0f0;
+            border-right-color: #8e44ad;
+            background: #fbf0ff;
         }
-        .card.libero h3 { color: var(--accent); }
+        .card.libero h3 { color: #8e44ad; }
+
+        /* تصميم كروت العقوبات */
+        .card.yellow-card { border-right-color: #f1c40f; background: #fffcf0; }
+        .card.yellow-card h3 { color: #d35400; }
+        
+        .card.red-card { border-right-color: #e74c3c; background: #fdf0ed; }
+        .card.red-card h3 { color: #c0392b; }
+        
+        .card.expel-card { border-right-color: #e67e22; background: #fef5e7; }
+        .card.expel-card h3 { color: #d35400; }
+
+        .card.disq-card { border-right-color: #2c3e50; background: #ecf0f1; }
+        .card.disq-card h3 { color: #2c3e50; }
 
         /* شبكة الإحصائيات (للقياسات) */
         .stats-grid {
@@ -206,6 +219,14 @@
             border-top: 1px solid #eee;
         }
 
+        .details-content ul {
+            padding-right: 20px;
+        }
+
+        .details-content li {
+            margin-bottom: 10px;
+        }
+
         /* الفوتر */
         footer {
             text-align: center;
@@ -225,7 +246,7 @@
 
     <header>
         <h1><i class="fa-solid fa-volleyball"></i> الدليل الشامل لقوانين الكرة الطائرة</h1>
-        <p>ملخص شامل ليلة الامتحان: الحكام، اللاعبين، القياسات، والقواعد الهامة (2025-2028)</p>
+        <p>مراجعة ليلة الامتحان: الحكام، اللاعبين، القياسات، ونظام العقوبات (2025-2028)</p>
     </header>
 
     <div class="container">
@@ -280,6 +301,52 @@
             </div>
         </section>
 
+        <!-- قسم العقوبات الجديد -->
+        <section id="sanctions">
+            <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> نظام العقوبات والبطاقات (الجزاءات)</h2>
+            <p style="margin-bottom: 20px; font-weight: bold; color: var(--accent);">ملاحظة هامة جداً للامتحان: البطاقة الصفراء في الكرة الطائرة هي للإنذار فقط ولا تخصم نقاط، الخصم يبدأ من البطاقة الحمراء!</p>
+            
+            <div class="grid-cards" style="margin-bottom: 20px;">
+                <div class="card yellow-card">
+                    <h3><i class="fa-solid fa-square" style="color: #f1c40f;"></i> بطاقة صفراء (لفت نظر)</h3>
+                    <p><strong>العقوبة: لا يوجد جزاء.</strong><br>تُعطى كتحذير رسمي (المرحلة الثانية) لسوء السلوك البسيط. لا تُفقد الفريق أي نقطة.</p>
+                </div>
+                <div class="card red-card">
+                    <h3><i class="fa-solid fa-square" style="color: #e74c3c;"></i> بطاقة حمراء (جزاء)</h3>
+                    <p><strong>العقوبة: نقطة + إرسال للخصم.</strong><br>تُعطى عند "السلوك غير المهذب الأول" أو تكرار السلوك البسيط.</p>
+                </div>
+                <div class="card expel-card">
+                    <h3><i class="fa-solid fa-clone" style="color: #e67e22;"></i> حمراء + صفراء (معاً)</h3>
+                    <p><strong>العقوبة: الطرد من الشوط.</strong><br>يمسك الحكم البطاقتين بيد واحدة. يُستبدل اللاعب ويغادر لغرفة الملابس حتى نهاية <strong>الشوط الجاري</strong>.</p>
+                </div>
+                <div class="card disq-card">
+                    <h3><i class="fa-solid fa-copy" style="color: #2c3e50;"></i> حمراء + صفراء (منفصلتين)</h3>
+                    <p><strong>العقوبة: استبعاد من المباراة.</strong><br>يمسك الحكم بطاقة في كل يد. يُستبدل اللاعب ويغادر لغرفة الملابس حتى نهاية <strong>المباراة بالكامل</strong>.</p>
+                </div>
+            </div>
+
+            <details>
+                <summary>التسلسل التصاعدي للعقوبات (كيف تتدرج؟) <i class="fa-solid fa-chevron-down" style="display:none;"></i></summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>سوء السلوك البسيط:</strong> 1- تحذير شفهي للكابتن. 2- بطاقة صفراء (لفت نظر دون عقوبة).</li>
+                        <li><strong>السلوك غير المهذب (Rude Conduct):</strong> المرة الأولى: (بطاقة حمراء/نقطة للخصم). المرة الثانية لنفس اللاعب: (طرد من الشوط). المرة الثالثة لنفس اللاعب: (استبعاد من المباراة).</li>
+                        <li><strong>السلوك العدائي (Offensive Conduct):</strong> (كلام مسيء أو إيماءات): المرة الأولى: (طرد من الشوط). المرة الثانية لنفس اللاعب: (استبعاد من المباراة).</li>
+                        <li><strong>الاعتداء (Aggression):</strong> (هجوم بدني أو تهديد مباشر): المرة الأولى مباشرة: (استبعاد من المباراة).</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>جزاءات التأخير (تأخير استئناف اللعب)</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>التأخير الأول في المباراة:</strong> "إنذار تأخير" (يعرض الحكم البطاقة الصفراء على معصم يده). لا توجد عقوبة.</li>
+                        <li><strong>التأخير الثاني وما يليه لنفس الفريق:</strong> "جزاء تأخير" (يعرض الحكم البطاقة الحمراء على معصم يده). <strong>العقوبة: نقطة وإرسال للمنافس.</strong></li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
         <!-- قسم القياسات -->
         <section id="measurements">
             <h2 class="section-title"><i class="fa-solid fa-ruler-combined"></i> القياسات والأرقام الهامة</h2>
@@ -320,7 +387,7 @@
 
         <!-- قسم القواعد العامة -->
         <section id="rules">
-            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> قواعد عامة (كبسولة النجاح)</h2>
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> قواعد عامة وتكتيكية</h2>
             
             <details>
                 <summary>نظام التسجيل والفوز <i class="fa-solid fa-chevron-down" style="display:none;"></i></summary>
