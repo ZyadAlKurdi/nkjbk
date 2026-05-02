@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدليل الشامل لقوانين الكرة الطائرة 2025</title>
-    <!-- استدعاء خط تجوال العربي -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>الموسوعة الشاملة | قوانين الكرة الطائرة 2025</title>
+    <!-- استدعاء خط تجوال الفاخر -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <!-- استدعاء أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* ================= المتغيرات اللونية ================= */
         :root {
-            --primary: #0056b3; /* أزرق داكن */
-            --secondary: #ffc107; /* أصفر ذهبي */
-            --accent: #e74c3c; /* أحمر للتنبيهات */
-            --bg-color: #f4f7f6;
-            --text-dark: #2c3e50;
-            --text-light: #7f8c8d;
+            --bg-page: #f8fafc;
+            --primary: #1e3a8a;       /* أزرق داكن */
+            --primary-light: #2563eb; /* أزرق ساطع */
+            --secondary: #f59e0b;     /* ذهبي */
+            --text-main: #0f172a;
+            --text-muted: #334155;
             --white: #ffffff;
+            
+            /* ألوان الأقسام */
+            --c-intro: #4f46e5;       /* نيلي للتعريفات */
+            --c-referee: #0284c7;     /* سماوي للحكام */
+            --c-court: #059669;       /* أخضر للملعب */
+            --c-net: #0d9488;         /* تيل للشبكة */
+            --c-ball: #ea580c;        /* برتقالي للكرة */
+            --c-team: #7c3aed;        /* بنفسجي للاعبين */
+            --c-match: #d946ef;       /* وردي لنظام اللعب */
+            --c-danger: #e11d48;      /* أحمر للعقوبات */
         }
 
         * {
@@ -28,418 +39,430 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.8;
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
         }
 
-        /* الهيدر */
+        /* ================= الهيدر ================= */
         header {
-            background: linear-gradient(135deg, var(--primary), #00a8ff);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 80px 20px 100px;
             text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: var(--white);
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: -40px;
+        }
+
+        @keyframes float { 
+            0%, 100% { transform: translateY(0); } 
+            50% { transform: translateY(-15px); } 
+        }
+
+        .header-icon {
+            font-size: 5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
         }
 
         header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
 
         header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            color: #e0f2fe;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 500;
         }
 
-        /* الحاوية الرئيسية */
+        /* ================= الحاوية والشبكة ================= */
         .container {
-            max-width: 1100px;
-            margin: -30px auto 30px;
-            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
             position: relative;
             z-index: 10;
         }
 
-        /* تصميم الأقسام */
-        section {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .section-title i {
-            margin-left: 10px;
-            color: var(--secondary);
-        }
-
-        /* شبكة الكروت */
-        .grid-cards {
+        .grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
         }
 
+        /* ================= تصميم البطاقات ================= */
         .card {
-            background: #f8f9fa;
-            border-right: 5px solid var(--primary);
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
         }
 
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .card h3 i {
-            color: var(--secondary);
-            margin-left: 8px;
-        }
-
-        /* تمييز كارت الليبرو */
-        .card.libero {
-            border-right-color: #8e44ad;
-            background: #fbf0ff;
-        }
-        .card.libero h3 { color: #8e44ad; }
-
-        /* تصميم كروت العقوبات */
-        .card.yellow-card { border-right-color: #f1c40f; background: #fffcf0; }
-        .card.yellow-card h3 { color: #d35400; }
-        
-        .card.red-card { border-right-color: #e74c3c; background: #fdf0ed; }
-        .card.red-card h3 { color: #c0392b; }
-        
-        .card.expel-card { border-right-color: #e67e22; background: #fef5e7; }
-        .card.expel-card h3 { color: #d35400; }
-
-        .card.disq-card { border-right-color: #2c3e50; background: #ecf0f1; }
-        .card.disq-card h3 { color: #2c3e50; }
-
-        /* شبكة الإحصائيات (للقياسات) */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-        }
-
-        .stat-box {
-            background: linear-gradient(135deg, var(--secondary), #f1c40f);
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-            font-weight: bold;
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            height: 6px;
             transition: 0.3s;
         }
+        .card:hover::before { height: 10px; }
 
-        .stat-box:hover {
-            transform: scale(1.05);
-        }
+        /* ألوان الكروت */
+        .card-intro::before { background: var(--c-intro); }
+        .card-referee::before { background: var(--c-referee); }
+        .card-court::before { background: var(--c-court); }
+        .card-net::before { background: var(--c-net); }
+        .card-ball::before { background: var(--c-ball); }
+        .card-team::before { background: var(--c-team); }
+        .card-match::before { background: var(--c-match); }
+        .card-danger::before { background: var(--c-danger); }
 
-        .stat-box i {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
-
-        /* تصميم الأكورديون للقواعد */
-        details {
-            background: #f8f9fa;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #eee;
-        }
-
-        summary {
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-            cursor: pointer;
-            list-style: none;
+        .card-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 2px dashed #e2e8f0;
+            padding-bottom: 15px;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        summary::after {
-            content: '\f107';
+        .card-intro .icon-box { background: var(--c-intro); }
+        .card-referee .icon-box { background: var(--c-referee); }
+        .card-court .icon-box { background: var(--c-court); }
+        .card-net .icon-box { background: var(--c-net); }
+        .card-ball .icon-box { background: var(--c-ball); }
+        .card-team .icon-box { background: var(--c-team); }
+        .card-match .icon-box { background: var(--c-match); }
+        .card-danger .icon-box { background: var(--c-danger); }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-main);
+        }
+
+        /* ================= القوائم والنصوص ================= */
+        ul { list-style: none; }
+        
+        li {
+            position: relative;
+            padding-right: 32px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        li::before {
+            content: '\f00c';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
-            transition: 0.3s;
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-size: 1.1rem;
         }
 
-        details[open] summary::after {
-            transform: rotate(180deg);
+        .card-intro li::before { color: var(--c-intro); }
+        .card-referee li::before { color: var(--c-referee); }
+        .card-court li::before { color: var(--c-court); }
+        .card-net li::before { color: var(--c-net); }
+        .card-ball li::before { color: var(--c-ball); }
+        .card-team li::before { color: var(--c-team); }
+        .card-match li::before { color: var(--c-match); }
+        .card-danger li::before { color: var(--c-danger); }
+
+        /* ================= تصميم الأرقام (Badges) ================= */
+        .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            color: var(--primary);
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-family: monospace;
+            font-size: 1.25rem;
+            margin: 0 4px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            direction: ltr;
         }
 
-        details[open] summary {
-            background: var(--primary);
-            color: var(--white);
+        .highlight {
+            font-weight: 800;
+            color: var(--text-main);
+            background: linear-gradient(120deg, transparent 0%, transparent 40%, #fef08a 40%, #fef08a 100%);
+            padding: 0 6px;
+            border-radius: 4px;
         }
 
-        .details-content {
-            padding: 20px;
-            background: var(--white);
-            border-top: 1px solid #eee;
-        }
-
-        .details-content ul {
-            padding-right: 20px;
-        }
-
-        .details-content li {
-            margin-bottom: 10px;
-        }
-
-        /* الفوتر */
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-light);
+        /* ================= قسم البطاقات التحكيمية ================= */
+        .penalty-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
             margin-top: 20px;
         }
 
-        /* الموبايل */
+        .pen-box {
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .pen-box i { font-size: 2.2rem; }
+        
+        .pen-yellow { background: linear-gradient(135deg, #fef9c3, #fef08a); color: #92400e; border: 1px solid #fde047; }
+        .pen-yellow i { color: #eab308; }
+
+        .pen-red { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; border: 1px solid #fca5a5; }
+        .pen-red i { color: #ef4444; }
+
+        .pen-expel { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #9a3412; border: 1px solid #fdba74; }
+        .pen-expel i { color: #f97316; }
+
+        .pen-disq { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); color: #0f172a; border: 1px solid #cbd5e1; }
+        .pen-disq i { color: #334155; }
+
+        /* ================= الفوتر ================= */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--white);
+            border-top: 1px solid #e2e8f0;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-top: 40px;
+            font-size: 1.1rem;
+        }
+        footer i { color: #ef4444; }
+
         @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
-            .section-title { font-size: 1.5rem; }
+            header h1 { font-size: 2.5rem; }
+            .card { padding: 25px 20px; }
+            .grid-layout { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1><i class="fa-solid fa-volleyball"></i> الدليل الشامل لقوانين الكرة الطائرة</h1>
-        <p>مراجعة ليلة الامتحان: الحكام، اللاعبين، القياسات، ونظام العقوبات (2025-2028)</p>
+        <i class="fa-solid fa-trophy header-icon"></i>
+        <h1>الموسوعة الشاملة للكرة الطائرة</h1>
+        <p>الدمج الكامل لمعلومات الدفتر الذهبي والتفاصيل التنظيمية (FIVB 2025-2028) في صفحة واحدة لاختصار المراجعة والتفوق</p>
     </header>
 
     <div class="container">
-        
-        <!-- قسم الحكام -->
-        <section id="referees">
-            <h2 class="section-title"><i class="fa-solid fa-gavel"></i> هيئة التحكيم (6 إلى 8 أشخاص)</h2>
-            <div class="grid-cards">
-                <div class="card">
-                    <h3><i class="fa-solid fa-1"></i> الحكم الأول</h3>
-                    <p>يقف على منصة عالية عند طرف الشبكة. هو صاحب السلطة المطلقة وقراراته نهائية. يطلق صافرة الإرسال، ويحكم على أخطاء اللعب (المسك، اللمس المزدوج) وأخطاء الشبكة العلوية.</p>
-                </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-2"></i> الحكم الثاني</h3>
-                    <p>المساعد الرئيسي، يقف على الأرض مقابل الحكم الأول. يراقب أخطاء لمس الشبكة السفلية، تخطي خط المنتصف، التبديلات، الأوقات المستقطعة، وأخطاء دوران الفريق المستقبل.</p>
-                </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-pen-to-square"></i> المسجل</h3>
-                    <p>يجلس على طاولة التسجيل. يسجل النقاط، يراقب التبديلات والأوقات المستقطعة، ويدير استمارة المباراة. (يوجد مساعد مسجل لمراقبة الليبرو).</p>
-                </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-flag"></i> حكام الخطوط</h3>
-                    <p>عددهم 2 أو 4 في زوايا الملعب. يستخدمون الرايات للإشارة إلى: الكرة (داخل/خارج)، الكرة ملموسة، أو خطأ قدم المرسل.</p>
-                </div>
-            </div>
-        </section>
+        <div class="grid-layout">
 
-        <!-- قسم اللاعبين -->
-        <section id="players">
-            <h2 class="section-title"><i class="fa-solid fa-users"></i> اللاعبون والمراكز (6 أساسيين)</h2>
-            <div class="grid-cards">
-                <div class="card">
-                    <h3><i class="fa-solid fa-brain"></i> المُعِد (Setter)</h3>
-                    <p>عقل الفريق. يقوم باللمسة الثانية لتهيئة الكرة ورفعها للمهاجمين بأفضل طريقة ممكنة لتسجيل النقطة.</p>
+            <!-- 1. معلومات أساسية وتعريفات -->
+            <div class="card card-intro">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h2>معلومات أساسية وتعريفات</h2>
                 </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-fire"></i> الضارب الخارجي</h3>
-                    <p>يلعب في مركز (4) يسار الشبكة. المهاجم الأساسي، يتميز بالقوة في الاستقبال والهجوم من الأطراف.</p>
-                </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-bolt"></i> الضارب المعاكس</h3>
-                    <p>يلعب في مركز (2) يمين الشبكة. هداف رئيسي، ويشكل حائط صد قوي أمام مهاجم الخصم.</p>
-                </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-shield-halved"></i> لاعب الارتكاز</h3>
-                    <p>يلعب في مركز (3) وسط الشبكة. يتميز بالطول، وظيفته تكوين حائط الصد وتنفيذ الهجمات السريعة.</p>
-                </div>
-                <div class="card libero">
-                    <h3><i class="fa-solid fa-lock"></i> اللاعب الحر (الليبرو)</h3>
-                    <p>متخصص في الدفاع والاستقبال بقميص مختلف.<br><strong>ممنوع من:</strong> الإرسال، الصد، أو إكمال هجمة من أعلى مستوى الشبكة.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم العقوبات الجديد -->
-        <section id="sanctions">
-            <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> نظام العقوبات والبطاقات (الجزاءات)</h2>
-            <p style="margin-bottom: 20px; font-weight: bold; color: var(--accent);">ملاحظة هامة جداً للامتحان: البطاقة الصفراء في الكرة الطائرة هي للإنذار فقط ولا تخصم نقاط، الخصم يبدأ من البطاقة الحمراء!</p>
-            
-            <div class="grid-cards" style="margin-bottom: 20px;">
-                <div class="card yellow-card">
-                    <h3><i class="fa-solid fa-square" style="color: #f1c40f;"></i> بطاقة صفراء (لفت نظر)</h3>
-                    <p><strong>العقوبة: لا يوجد جزاء.</strong><br>تُعطى كتحذير رسمي (المرحلة الثانية) لسوء السلوك البسيط. لا تُفقد الفريق أي نقطة.</p>
-                </div>
-                <div class="card red-card">
-                    <h3><i class="fa-solid fa-square" style="color: #e74c3c;"></i> بطاقة حمراء (جزاء)</h3>
-                    <p><strong>العقوبة: نقطة + إرسال للخصم.</strong><br>تُعطى عند "السلوك غير المهذب الأول" أو تكرار السلوك البسيط.</p>
-                </div>
-                <div class="card expel-card">
-                    <h3><i class="fa-solid fa-clone" style="color: #e67e22;"></i> حمراء + صفراء (معاً)</h3>
-                    <p><strong>العقوبة: الطرد من الشوط.</strong><br>يمسك الحكم البطاقتين بيد واحدة. يُستبدل اللاعب ويغادر لغرفة الملابس حتى نهاية <strong>الشوط الجاري</strong>.</p>
-                </div>
-                <div class="card disq-card">
-                    <h3><i class="fa-solid fa-copy" style="color: #2c3e50;"></i> حمراء + صفراء (منفصلتين)</h3>
-                    <p><strong>العقوبة: استبعاد من المباراة.</strong><br>يمسك الحكم بطاقة في كل يد. يُستبدل اللاعب ويغادر لغرفة الملابس حتى نهاية <strong>المباراة بالكامل</strong>.</p>
-                </div>
+                <ul>
+                    <li><span class="highlight">مبتكر اللعبة:</span> ويليام مورجان.</li>
+                    <li><span class="highlight">الصد (البلوك):</span> هو حركة اللاعبين القريبين من الشبكة لاعتراض الكرة القادمة من المنافسين.</li>
+                    <li><span class="highlight">الإرسال:</span> حركة وضع الكرة في اللعب بواسطة اللاعب الخلفي الأيمن المتواجد في منطقة الإرسال.</li>
+                    <li><span class="highlight">زمن الإرسال:</span> الوقت المسموح فيه لتنفيذ الإرسال هو <span class="num">8</span> ثوانٍ بعد صافرة الحكم.</li>
+                </ul>
             </div>
 
-            <details>
-                <summary>التسلسل التصاعدي للعقوبات (كيف تتدرج؟) <i class="fa-solid fa-chevron-down" style="display:none;"></i></summary>
-                <div class="details-content">
-                    <ul>
-                        <li><strong>سوء السلوك البسيط:</strong> 1- تحذير شفهي للكابتن. 2- بطاقة صفراء (لفت نظر دون عقوبة).</li>
-                        <li><strong>السلوك غير المهذب (Rude Conduct):</strong> المرة الأولى: (بطاقة حمراء/نقطة للخصم). المرة الثانية لنفس اللاعب: (طرد من الشوط). المرة الثالثة لنفس اللاعب: (استبعاد من المباراة).</li>
-                        <li><strong>السلوك العدائي (Offensive Conduct):</strong> (كلام مسيء أو إيماءات): المرة الأولى: (طرد من الشوط). المرة الثانية لنفس اللاعب: (استبعاد من المباراة).</li>
-                        <li><strong>الاعتداء (Aggression):</strong> (هجوم بدني أو تهديد مباشر): المرة الأولى مباشرة: (استبعاد من المباراة).</li>
-                    </ul>
+            <!-- 2. هيئة التحكيم -->
+            <div class="card card-referee">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-gavel"></i></div>
+                    <h2>هيئة التحكيم وأدوارهم</h2>
                 </div>
-            </details>
-            <details>
-                <summary>جزاءات التأخير (تأخير استئناف اللعب)</summary>
-                <div class="details-content">
-                    <ul>
-                        <li><strong>التأخير الأول في المباراة:</strong> "إنذار تأخير" (يعرض الحكم البطاقة الصفراء على معصم يده). لا توجد عقوبة.</li>
-                        <li><strong>التأخير الثاني وما يليه لنفس الفريق:</strong> "جزاء تأخير" (يعرض الحكم البطاقة الحمراء على معصم يده). <strong>العقوبة: نقطة وإرسال للمنافس.</strong></li>
-                    </ul>
-                </div>
-            </details>
-        </section>
+                <ul>
+                    <li><span class="highlight">الحكم الأول:</span> صاحب السلطة المطلقة ويقف على منصة. قراراته نهائية. يطلق صافرة الإرسال، يحكم على أخطاء اللعب والشبكة العلوية.</li>
+                    <li><span class="highlight">الحكم الثاني:</span> يقف على الأرض. يراقب أخطاء الشبكة السفلية، خط المنتصف، يدير التبديلات ويراقب الدوران.</li>
+                    <li><span class="highlight">المسجل:</span> يدير استمارة المباراة. يسجل النقاط، التبديلات، ويراقب الترتيب. يستخدم الجرس للتنبيه.</li>
+                    <li><span class="highlight">حكام الخطوط:</span> (2 أو 4) يشيرون بالرايات إلى: الكرة داخل/خارج، الكرة ملموسة، أو خطأ قدم المُرسل.</li>
+                </ul>
+            </div>
 
-        <!-- قسم القياسات -->
-        <section id="measurements">
-            <h2 class="section-title"><i class="fa-solid fa-ruler-combined"></i> القياسات والأرقام الهامة</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <i class="fa-solid fa-vector-square"></i>
-                    <div>الملعب</div>
-                    <div class="stat-value">18 × 9 م</div>
+            <!-- 3. مواصفات الملعب والمناطق -->
+            <div class="card card-court" style="grid-row: span 2;">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-vector-square"></i></div>
+                    <h2>مواصفات الملعب والمناطق</h2>
                 </div>
-                <div class="stat-box">
-                    <i class="fa-solid fa-ruler-vertical"></i>
-                    <div>شبكة الرجال</div>
-                    <div class="stat-value">2.43 م</div>
+                <ul>
+                    <li><span class="highlight">أبعاد الملعب:</span> مستطيل مقاسه <span class="num">18 × 9</span> أمتار.</li>
+                    <li><span class="highlight">المنطقة الحرة:</span> لا يقل عرضها عن <span class="num">3</span> أمتار. (في مسابقات الاتحاد الدولي: تكون <span class="num">5</span> أمتار جانبياً، و <span class="num">6.5</span> أمتار خلفياً).</li>
+                    <li><span class="highlight">المجال الحر للعب:</span> الفراغ فوق منطقة اللعب، لا يقل ارتفاعه عن <span class="num">7</span> أمتار. (في الدولي: لا يقل عن <span class="num">12.5</span> متراً).</li>
+                    <li><span class="highlight">ميول الملعب:</span> يُسمح بميل قدره <span class="num">5</span> ملم لكل متر في الملاعب المكشوفة لتصريف المياه.</li>
+                    <li><span class="highlight">الخطوط:</span> جميع الخطوط بعرض <span class="num">5</span> سم ويجب أن تكون بلون فاتح.</li>
+                    <li><span class="highlight">خط المنتصف:</span> يقسم الملعب إلى قسمين متساويين <span class="num">9 × 9</span> أمتار.</li>
+                    <li><span class="highlight">خط الهجوم:</span> يبعد <span class="num">3</span> أمتار عن خط المنتصف. (في الدولي: يمتد بخطوط متقطعة عبارة عن <span class="num">5</span> خطوط قصيرة بطول <span class="num">15</span> سم وعرض <span class="num">5</span> سم، بينها فراغ <span class="num">20</span> سم، بطول إجمالي <span class="num">1.75</span> متر).</li>
+                    <li><span class="highlight">منطقة الإرسال:</span> بعرض <span class="num">9</span> أمتار خلف خط النهاية، وتحدد جانبياً بخطين قصيرين طولهما <span class="num">15</span> سم يبعدان <span class="num">20</span> سم خلف خط النهاية.</li>
+                    <li><span class="highlight">منطقة الإحماء:</span> مساحتها <span class="num">3 × 3</span> أمتار.</li>
+                    <li><span class="highlight">البيئة والإضاءة:</span> درجة الحرارة لا تقل عن <span class="num">10°</span> مئوية. الإضاءة لا تقل عن <span class="num">300</span> لوكس (في الدولي: لا تقل عن <span class="num">2000</span> لوكس وتُقاس على ارتفاع متر واحد).</li>
+                </ul>
+            </div>
+
+            <!-- 4. الشبكة والقوائم والعصا الهوائية -->
+            <div class="card card-net">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-up-long"></i></div>
+                    <h2>الشبكة والقوائم والعصا</h2>
                 </div>
-                <div class="stat-box">
-                    <i class="fa-solid fa-ruler-vertical"></i>
-                    <div>شبكة السيدات</div>
-                    <div class="stat-value">2.24 م</div>
+                <ul>
+                    <li><span class="highlight">ارتفاع الشبكة:</span> <span class="num">2.43</span> متر للرجال، و <span class="num">2.24</span> متر للسيدات.</li>
+                    <li><span class="highlight">أبعاد الشبكة:</span> العرض <span class="num">1</span> متر، والطول <span class="num">9.5 - 10</span> أمتار.</li>
+                    <li><span class="highlight">فتحات الشبكة:</span> عيون مربعة سوداء بقياس <span class="num">10</span> سم.</li>
+                    <li><span class="highlight">أشرطة الشبكة:</span> شريط علوي أفقي بعرض <span class="num">7</span> سم، سفلي أفقي بعرض <span class="num">5</span> سم. الأشرطة الجانبية عرضها <span class="num">5</span> سم وطولها <span class="num">1</span> متر.</li>
+                    <li><span class="highlight">العصا الهوائية (الأنتينا):</span> قضيب مرن طوله <span class="num">1.80</span> متر، قطره <span class="num">10</span> ملم. يبرز منها <span class="num">80</span> سم فوق الشبكة، ومخططة كل <span class="num">10</span> سم بألوان متباينة (يفضل الأحمر والأبيض).</li>
+                    <li><span class="highlight">القوائم:</span> تثبت على مسافة <span class="num">0.50 - 1.00</span> متر خارج الخطين الجانبيين، وارتفاعها <span class="num">2.55</span> متر. (في الدولي: توضع على بعد <span class="num">1</span> متر وتكون مبطنة).</li>
+                </ul>
+            </div>
+
+            <!-- 5. مواصفات الكرة -->
+            <div class="card card-ball">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-volleyball"></i></div>
+                    <h2>مواصفات الكرة</h2>
                 </div>
-                <div class="stat-box">
-                    <i class="fa-solid fa-arrows-left-right"></i>
-                    <div>خط الهجوم</div>
-                    <div class="stat-value">3 متر</div>
+                <ul>
+                    <li><span class="highlight">المحيط:</span> <span class="num">65 - 67</span> سم.</li>
+                    <li><span class="highlight">الوزن:</span> <span class="num">260 - 280</span> غرام.</li>
+                    <li><span class="highlight">ضغط الهواء:</span> <span class="num">0.300 - 0.325</span> كجم/سم².</li>
+                    <li><span class="highlight">المسابقات الدولية:</span> يتم استخدام <span class="num">5</span> كرات بنظام <span class="num">6</span> جامعي كرات (واحد في كل ركن، وواحد خلف كل حكم).</li>
+                </ul>
+            </div>
+
+            <!-- 6. تكوين الفريق والملابس -->
+            <div class="card card-team">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                    <h2>تكوين الفريق وأرقام القمصان</h2>
                 </div>
-                <div class="stat-box">
-                    <i class="fa-solid fa-baseball"></i>
-                    <div>وزن الكرة</div>
-                    <div class="stat-value">260-280 جم</div>
+                <ul>
+                    <li><span class="highlight">عدد اللاعبين:</span> <span class="num">12</span> لاعباً كحد أقصى (في الكبار دولياً يجوز تسجيل <span class="num">14</span>).</li>
+                    <li><span class="highlight">الطاقم:</span> 1 مدرب، <span class="num">2</span> مساعد مدرب كحد أقصى، 1 معالج، 1 طبيب بشري.</li>
+                    <li><span class="highlight">الأرقام والملابس:</span> ترقم الفانلات من <span class="num">1</span> إلى <span class="num">20</span>. ارتفاع الرقم لا يقل عن <span class="num">15</span> سم للصدر، و <span class="num">20</span> سم للظهر. سماكة الخط <span class="num">2</span> سم.</li>
+                    <li><span class="highlight">كابتن الفريق:</span> يُميز بشريط <span class="num">8 × 2</span> سم يوضع تحت الرقم على الصدر.</li>
+                </ul>
+            </div>
+
+            <!-- 7. مراكز اللاعبين والأدوار -->
+            <div class="card card-team" style="grid-row: span 2;">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <h2>المراكز، الأدوار، والدوران</h2>
                 </div>
-                <div class="stat-box">
-                    <i class="fa-solid fa-temperature-empty"></i>
-                    <div>الحد الأدنى للحرارة</div>
-                    <div class="stat-value">10° مئوية</div>
+                <ul>
+                    <li><span class="highlight">المُعِد (Setter):</span> صانع الألعاب ويقوم باللمسة الثانية لتهيئة الكرة للمهاجمين.</li>
+                    <li><span class="highlight">الضارب الخارجي:</span> المهاجم الأساسي ويلعب في مركز 4 (أيسر الشبكة).</li>
+                    <li><span class="highlight">الضارب المعاكس:</span> الهداف الرئيسي ويلعب في مركز 2 (يمين الشبكة).</li>
+                    <li><span class="highlight">لاعب الارتكاز:</span> يلعب بمركز 3 (وسط الشبكة) لتنفيذ حائط الصد والهجوم السريع.</li>
+                    <li><span class="highlight">اللاعب الحر (الليبرو):</span> متخصص بالدفاع. <strong>ممنوع من:</strong> الإرسال، الصد، أو إكمال هجمة من أعلى الشبكة. يتواجد ليبرو <span class="num">1</span> فقط بالملعب (دولياً يُلزم تسجيل <span class="num">2</span> إذا زاد الفريق عن 12 لاعباً).</li>
+                    <li><span class="highlight">مراكز الملعب:</span> الصف الأمامي (4 أيسر، 3 أوسط، 2 أيمن). الصف الخلفي (5 أيسر، 6 أوسط، 1 أيمن).</li>
+                    <li><span class="highlight">الدوران:</span> يدور اللاعبون مركزاً واحداً في اتجاه <strong>عقارب الساعة</strong> عندما يكسب الفريق حق الإرسال (لاعب 2 يذهب لـ 1 ليرسل).</li>
+                </ul>
+            </div>
+
+            <!-- 8. نظام اللعب والأشواط -->
+            <div class="card card-match" style="grid-row: span 2;">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h2>الأشواط، اللمسات، والتوقفات</h2>
+                </div>
+                <ul>
+                    <li><span class="highlight">اللمسات المسموحة:</span> <span class="num">3</span> لمسات كحد أقصى. لمسة الصد <strong>لا تُحتسب</strong> من ضمن اللمسات الثلاث.</li>
+                    <li><span class="highlight">لمس الكرة:</span> مسموح اللعب بأي جزء من الجسم (بما في ذلك القدم). لا يجوز للاعب لمس الكرة مرتين متتاليتين (إلا في الصد).</li>
+                    <li><span class="highlight">الفوز بالشوط:</span> تسجيل <span class="num">25</span> نقطة أولاً وبفارق نقطتين (عند 24-24 يستمر اللعب حتى يتحقق الفارق).</li>
+                    <li><span class="highlight">الفوز بالمباراة:</span> الفوز بـ <span class="num">3</span> أشواط.</li>
+                    <li><span class="highlight">الشوط الخامس (الفاصل):</span> يُلعب من <span class="num">15</span> نقطة (بفارق نقطتين)، وتتغير الملاعب عند النقطة 8.</li>
+                    <li><span class="highlight">الرفض والانسحاب:</span> يُعتبر الفريق خاسراً بنتيجة <span class="num">0-3</span> للمباراة، و <span class="num">0-25</span> لكل شوط.</li>
+                    <li><span class="highlight">الأوقات المستقطعة:</span> يحق لكل فريق <span class="num">2</span> وقت مستقطع بالشوط، مدة الواحد <span class="num">30</span> ثانية.</li>
+                    <li><span class="highlight">التبديلات:</span> يحق لكل فريق <span class="num">6</span> تبديلات في كل شوط. (تبديل الليبرو لا يُحسب ضمن الـ 6).</li>
+                    <li><span class="highlight">فترات الراحة:</span> بين الأشواط <span class="num">3</span> دقائق. يمكن أن تمتد بين الشوطين الثاني والثالث إلى <span class="num">10</span> دقائق.</li>
+                    <li><span class="highlight">الإحماء:</span> في المسابقات الدولية، <span class="num">10</span> دقائق للفريقين معاً قبل المباراة.</li>
+                </ul>
+            </div>
+
+            <!-- 9. الإصابات والعقوبات (مهم جداً) -->
+            <div class="card card-danger" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h2>الإصابات، التأخير، والجزاءات (البطاقات)</h2>
+                </div>
+                <ul>
+                    <li><span class="highlight">وقت العلاج:</span> إذا تعذر التبديل قانونياً، يُعطى المصاب <span class="num">3</span> دقائق (تُمنح مرة واحدة فقط لنفس اللاعب).</li>
+                    <li><span class="highlight">التوقف الطويل:</span> إذا زادت مدة التوقفات الإجمالية عن <span class="num">4</span> ساعات، تُعاد المباراة بالكامل.</li>
+                    <li><span class="highlight">جزاء التأخير:</span> التأخير الأول (إنذار تأخير- بطاقة صفراء على معصم الحكم/لا عقوبة). التأخير الثاني (جزاء تأخير- بطاقة حمراء/نقطة للمنافس).</li>
+                </ul>
+                
+                <div class="penalty-grid">
+                    <div class="pen-box pen-yellow">
+                        <i class="fa-solid fa-square"></i>
+                        <div><strong>بطاقة صفراء:</strong> تحذير رسمي لسوء السلوك البسيط (لا توجد نقطة جزاء).</div>
+                    </div>
+                    <div class="pen-box pen-red">
+                        <i class="fa-solid fa-square"></i>
+                        <div><strong>بطاقة حمراء:</strong> جزاء لسوء السلوك المهذب (تسجيل نقطة للمنافس وانتقال الإرسال إليه).</div>
+                    </div>
+                    <div class="pen-box pen-expel">
+                        <i class="fa-solid fa-clone"></i>
+                        <div><strong>بطاقة حمراء وصفراء معاً (في يد واحدة):</strong> الطرد (يغادر اللاعب إلى غرفة الملابس لبقية الشوط الجاري).</div>
+                    </div>
+                    <div class="pen-box pen-disq">
+                        <i class="fa-solid fa-copy"></i>
+                        <div><strong>بطاقة حمراء وصفراء (في يدين منفصلتين):</strong> الاستبعاد (يغادر اللاعب الصالة نهائياً - يُطرد من المباراة بأكملها).</div>
+                    </div>
                 </div>
             </div>
-            <p style="margin-top: 15px; text-align: center; font-weight: bold; color: var(--text-light);">* عرض خطوط الملعب: 5 سم | العصا الهوائية: 1.80 م (يبرز منها 80 سم)</p>
-        </section>
 
-        <!-- قسم القواعد العامة -->
-        <section id="rules">
-            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> قواعد عامة وتكتيكية</h2>
-            
-            <details>
-                <summary>نظام التسجيل والفوز <i class="fa-solid fa-chevron-down" style="display:none;"></i></summary>
-                <div class="details-content">
-                    <ul>
-                        <li>يفوز بالشوط الفريق الذي يصل إلى <strong>25 نقطة</strong> (بشرط فارق نقطتين، مثل 26-24).</li>
-                        <li>تفوز بالمباراة الفريق الذي يفوز بـ <strong>3 أشواط</strong>.</li>
-                        <li>في حال التعادل 2-2، يلعب الشوط الخامس إلى <strong>15 نقطة</strong> (ويتم تغيير الملاعب عند النقطة 8).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>اللمسات المسموحة وتداول الكرة</summary>
-                <div class="details-content">
-                    <ul>
-                        <li>يحق للفريق <strong>3 لمسات</strong> كحد أقصى لإعادة الكرة للمنافس.</li>
-                        <li><strong>لمسة حائط الصد لا تُحتسب</strong> ضمن اللمسات الثلاث (يحق للفريق 3 لمسات بعدها).</li>
-                        <li>لا يجوز للاعب لمس الكرة مرتين متتاليتين (باستثناء الصد واللمسة الأولى للفريق).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>الأوقات المستقطعة والتبديلات</summary>
-                <div class="details-content">
-                    <ul>
-                        <li>كل فريق يمتلك <strong>وقتين مستقطعين</strong> في الشوط (مدة كل وقت 30 ثانية).</li>
-                        <li>يحق للفريق <strong>6 تبديلات</strong> كحد أقصى في كل شوط.</li>
-                        <li>اللاعب الحر (الليبرو) يتبدل بلا حدود ولا تُحسب تبديلاته ضمن التبديلات الـ 6.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details>
-                <summary>الدوران وزمن الإرسال</summary>
-                <div class="details-content">
-                    <ul>
-                        <li>عندما يكسب الفريق المستقبل نقطة، يدور اللاعبون مركزاً واحداً <strong>باتجاه عقارب الساعة</strong>.</li>
-                        <li>يملك اللاعب <strong>8 ثوانٍ</strong> فقط لتنفيذ الإرسال بعد صافرة الحكم.</li>
-                        <li>مسموح قانونياً لعب الكرة <strong>بالقدم</strong> أو أي جزء من أجزاء الجسم.</li>
-                    </ul>
-                </div>
-            </details>
-
-        </section>
-
+        </div>
     </div>
 
     <footer>
-        <p>تم إعداد هذا الملخص بناءً على القواعد الرسمية للاتحاد الدولي للكرة الطائرة (FIVB) 2025-2028</p>
-        <p style="color: var(--primary); font-weight: bold; margin-top: 5px;">بالتوفيق في الامتحانات! 🥇</p>
+        <i class="fa-solid fa-crown" style="font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+        تم دمج المعلومات بدقة متناهية من الدفتر الذهبي وقوانين FIVB لتكون مرجعك الأول للتفوق 
     </footer>
 
 </body>
