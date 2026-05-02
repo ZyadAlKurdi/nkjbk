@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل الشامل لقوانين الكرة الطائرة</title>
+    <!-- استدعاء خط تجوال العربي -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- استدعاء أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0056b3; /* أزرق داكن */
+            --secondary: #ffc107; /* أصفر ذهبي */
+            --accent: #e74c3c; /* أحمر للتنبيهات */
+            --bg-color: #f4f7f6;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            background: linear-gradient(135deg, var(--primary), #00a8ff);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1100px;
+            margin: -30px auto 30px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* تصميم الأقسام */
+        section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .section-title i {
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+
+        /* شبكة الكروت (للحكام واللاعبين) */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-right: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .card h3 i {
+            color: var(--secondary);
+            margin-left: 8px;
+        }
+
+        /* تمييز كارت الليبرو */
+        .card.libero {
+            border-right-color: var(--accent);
+            background: #fff0f0;
+        }
+        .card.libero h3 { color: var(--accent); }
+
+        /* شبكة الإحصائيات (للقياسات) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, var(--secondary), #f1c40f);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        /* تصميم الأكورديون للقواعد */
+        details {
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        summary {
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .details-content {
+            padding: 20px;
+            background: var(--white);
+            border-top: 1px solid #eee;
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+
+        /* الموبايل */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-volleyball"></i> الدليل الشامل لقوانين الكرة الطائرة</h1>
+        <p>ملخص شامل ليلة الامتحان: الحكام، اللاعبين، القياسات، والقواعد الهامة (2025-2028)</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- قسم الحكام -->
+        <section id="referees">
+            <h2 class="section-title"><i class="fa-solid fa-gavel"></i> هيئة التحكيم (6 إلى 8 أشخاص)</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3><i class="fa-solid fa-1"></i> الحكم الأول</h3>
+                    <p>يقف على منصة عالية عند طرف الشبكة. هو صاحب السلطة المطلقة وقراراته نهائية. يطلق صافرة الإرسال، ويحكم على أخطاء اللعب (المسك، اللمس المزدوج) وأخطاء الشبكة العلوية.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-2"></i> الحكم الثاني</h3>
+                    <p>المساعد الرئيسي، يقف على الأرض مقابل الحكم الأول. يراقب أخطاء لمس الشبكة السفلية، تخطي خط المنتصف، التبديلات، الأوقات المستقطعة، وأخطاء دوران الفريق المستقبل.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-pen-to-square"></i> المسجل</h3>
+                    <p>يجلس على طاولة التسجيل. يسجل النقاط، يراقب التبديلات والأوقات المستقطعة، ويدير استمارة المباراة. (يوجد مساعد مسجل لمراقبة الليبرو).</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-flag"></i> حكام الخطوط</h3>
+                    <p>عددهم 2 أو 4 في زوايا الملعب. يستخدمون الرايات للإشارة إلى: الكرة (داخل/خارج)، الكرة ملموسة، أو خطأ قدم المرسل.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم اللاعبين -->
+        <section id="players">
+            <h2 class="section-title"><i class="fa-solid fa-users"></i> اللاعبون والمراكز (6 أساسيين)</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3><i class="fa-solid fa-brain"></i> المُعِد (Setter)</h3>
+                    <p>عقل الفريق. يقوم باللمسة الثانية لتهيئة الكرة ورفعها للمهاجمين بأفضل طريقة ممكنة لتسجيل النقطة.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-fire"></i> الضارب الخارجي</h3>
+                    <p>يلعب في مركز (4) يسار الشبكة. المهاجم الأساسي، يتميز بالقوة في الاستقبال والهجوم من الأطراف.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-bolt"></i> الضارب المعاكس</h3>
+                    <p>يلعب في مركز (2) يمين الشبكة. هداف رئيسي، ويشكل حائط صد قوي أمام مهاجم الخصم.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-shield-halved"></i> لاعب الارتكاز</h3>
+                    <p>يلعب في مركز (3) وسط الشبكة. يتميز بالطول، وظيفته تكوين حائط الصد وتنفيذ الهجمات السريعة.</p>
+                </div>
+                <div class="card libero">
+                    <h3><i class="fa-solid fa-lock"></i> اللاعب الحر (الليبرو)</h3>
+                    <p>متخصص في الدفاع والاستقبال بقميص مختلف.<br><strong>ممنوع من:</strong> الإرسال، الصد، أو إكمال هجمة من أعلى مستوى الشبكة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم القياسات -->
+        <section id="measurements">
+            <h2 class="section-title"><i class="fa-solid fa-ruler-combined"></i> القياسات والأرقام الهامة</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <i class="fa-solid fa-vector-square"></i>
+                    <div>الملعب</div>
+                    <div class="stat-value">18 × 9 م</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-ruler-vertical"></i>
+                    <div>شبكة الرجال</div>
+                    <div class="stat-value">2.43 م</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-ruler-vertical"></i>
+                    <div>شبكة السيدات</div>
+                    <div class="stat-value">2.24 م</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-arrows-left-right"></i>
+                    <div>خط الهجوم</div>
+                    <div class="stat-value">3 متر</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-baseball"></i>
+                    <div>وزن الكرة</div>
+                    <div class="stat-value">260-280 جم</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-temperature-empty"></i>
+                    <div>الحد الأدنى للحرارة</div>
+                    <div class="stat-value">10° مئوية</div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; text-align: center; font-weight: bold; color: var(--text-light);">* عرض خطوط الملعب: 5 سم | العصا الهوائية: 1.80 م (يبرز منها 80 سم)</p>
+        </section>
+
+        <!-- قسم القواعد العامة -->
+        <section id="rules">
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> قواعد عامة (كبسولة النجاح)</h2>
+            
+            <details>
+                <summary>نظام التسجيل والفوز <i class="fa-solid fa-chevron-down" style="display:none;"></i></summary>
+                <div class="details-content">
+                    <ul>
+                        <li>يفوز بالشوط الفريق الذي يصل إلى <strong>25 نقطة</strong> (بشرط فارق نقطتين، مثل 26-24).</li>
+                        <li>تفوز بالمباراة الفريق الذي يفوز بـ <strong>3 أشواط</strong>.</li>
+                        <li>في حال التعادل 2-2، يلعب الشوط الخامس إلى <strong>15 نقطة</strong> (ويتم تغيير الملاعب عند النقطة 8).</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>اللمسات المسموحة وتداول الكرة</summary>
+                <div class="details-content">
+                    <ul>
+                        <li>يحق للفريق <strong>3 لمسات</strong> كحد أقصى لإعادة الكرة للمنافس.</li>
+                        <li><strong>لمسة حائط الصد لا تُحتسب</strong> ضمن اللمسات الثلاث (يحق للفريق 3 لمسات بعدها).</li>
+                        <li>لا يجوز للاعب لمس الكرة مرتين متتاليتين (باستثناء الصد واللمسة الأولى للفريق).</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>الأوقات المستقطعة والتبديلات</summary>
+                <div class="details-content">
+                    <ul>
+                        <li>كل فريق يمتلك <strong>وقتين مستقطعين</strong> في الشوط (مدة كل وقت 30 ثانية).</li>
+                        <li>يحق للفريق <strong>6 تبديلات</strong> كحد أقصى في كل شوط.</li>
+                        <li>اللاعب الحر (الليبرو) يتبدل بلا حدود ولا تُحسب تبديلاته ضمن التبديلات الـ 6.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>الدوران وزمن الإرسال</summary>
+                <div class="details-content">
+                    <ul>
+                        <li>عندما يكسب الفريق المستقبل نقطة، يدور اللاعبون مركزاً واحداً <strong>باتجاه عقارب الساعة</strong>.</li>
+                        <li>يملك اللاعب <strong>8 ثوانٍ</strong> فقط لتنفيذ الإرسال بعد صافرة الحكم.</li>
+                        <li>مسموح قانونياً لعب الكرة <strong>بالقدم</strong> أو أي جزء من أجزاء الجسم.</li>
+                    </ul>
+                </div>
+            </details>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <p>تم إعداد هذا الملخص بناءً على القواعد الرسمية للاتحاد الدولي للكرة الطائرة (FIVB) 2025-2028</p>
+        <p style="color: var(--primary); font-weight: bold; margin-top: 5px;">بالتوفيق في الامتحانات! 🥇</p>
+    </footer>
+
+</body>
+</html>
